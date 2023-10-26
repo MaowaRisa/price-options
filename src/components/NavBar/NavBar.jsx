@@ -12,13 +12,13 @@ const NavBar = () => {
     ];
       
     return (
-        <nav>
+        <nav className="text-white  bg-red-800 p-6">
             <div className="md:hidden text-xl" onClick={() => setOpen(!open)}>
                 {
                     open === true ? <AiOutlineClose></AiOutlineClose> : <AiOutlineMenu></AiOutlineMenu>
                 }
             </div>
-            <ul className="md:flex gap-10">
+            <ul className={`md:flex gap-10 absolute md:static bg-red-800 duration-1000 ${open?'top-16':'-top-60'}`}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
